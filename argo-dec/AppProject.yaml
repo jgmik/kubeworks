@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: argo-dec
+  name: sample-project
   namespace: argo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
   - '*'
 
   destinations:
-  - namespace: kubeworks-cluster
+  - namespace: kubeworks-sample-cluster
     server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:
