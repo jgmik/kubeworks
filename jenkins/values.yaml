@@ -211,16 +211,17 @@ controller:
   # For minikube, set this to NodePort, elsewhere uses LoadBalancer
   # Use ClusterIP if your setup includes ingress controller
   # -- k8s service type
-  serviceType: ClusterIP
+  # serviceType: ClusterIP jgmik
+  serviceType: NodePort
 
   # -- k8s service clusterIP. Only used if serviceType is ClusterIP
   clusterIp:
   # -- k8s service port
-  servicePort: 8080
+  # servicePort: 8080 jgmik
   # -- k8s target port
   targetPort: 8080
   # -- k8s node port. Only used if serviceType is NodePort
-  nodePort:
+  nodePort: 30085
 
   # Use Local to preserve the client source IP and avoids a second hop for LoadBalancer and NodePort type services,
   # but risks potentially imbalanced traffic spreading.
