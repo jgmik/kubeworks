@@ -8,7 +8,7 @@ metadata:
   name: jenkins-v2-crb
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
+  kind: Role
   name: jenkins
 subjects:
 - kind: ServiceAccount
