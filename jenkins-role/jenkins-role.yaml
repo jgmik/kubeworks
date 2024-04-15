@@ -6,7 +6,7 @@ metadata:
   labels:
     kubernetes.io/bootstrapping: rbac-defaults
   namespace: jenkins-v2
-  name: jenkins
+  name: jenkins-v2-role
 rules:
 - apiGroups:
   - '*'
