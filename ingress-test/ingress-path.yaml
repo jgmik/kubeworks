@@ -7,18 +7,22 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: kube01.softworks.co.kr
+    http:
       paths:
-      - path: /hello
+      # - path: /hello
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: hello
             port:
               name: http
-  - http:
+  - host: kube02.softworks.co.kr
+    http:
       paths:
-      - path: /grafana
+      # - path: /grafana
+      - path: /
         pathType: Prefix
         backend:
           service:
