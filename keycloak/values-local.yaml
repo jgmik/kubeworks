@@ -1,5 +1,16 @@
-service:
-  type: NodePort
-  nodePorts:
-    http: "31080"
-    https: "31443"
+# service:
+#   type: NodePort
+#   nodePorts:
+#     http: "31080"
+#     https: "31443"
+auth:
+  adminPassword: "admin1234"
+  managementPassword: "admin1234"
+postgresql:
+  enabled: true
+  auth:
+    username: keycloak
+    password: "keycloak"
+    database: keycloak
+    existingSecret: ""
+  architecture: standalone
