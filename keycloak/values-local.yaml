@@ -1,11 +1,15 @@
-# service:
-#   type: NodePort
-#   nodePorts:
-#     http: "31080"
-#     https: "31443"
+service:
+  type: NodePort
+  nodePorts:
+    http: "30081"
+    https: "30082"
 auth:
   adminPassword: "admin1234"
   managementPassword: "admin1234"
+# ingress:
+#   enabled: true
+#   ingressClassName: nginx # 사용하는 ingress class
+#   hostname: kube01.softworks.co.kr # 원하는 domain
 postgresql:
   enabled: true
   auth:
