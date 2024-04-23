@@ -10,13 +10,11 @@ auth:
 #   enabled: true
 #   ingressClassName: nginx # 사용하는 ingress class
 #   hostname: kube01.softworks.co.kr # 원하는 domain
-postgresql:
-  persistence:
-    enabled: false
-  # enabled: true
-  # auth:
-  #   username: keycloak
-  #   password: "keycloak"
-  #   database: keycloak
-  #   existingSecret: ""
-  # architecture: standalone
+# postgresql:
+#   enabled: true
+#   auth:
+#     username: keycloak
+#     password: "keycloak"
+#     database: keycloak
+#     existingSecret: ""
+#   architecture: standalone
