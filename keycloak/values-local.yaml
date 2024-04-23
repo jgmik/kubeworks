@@ -1,8 +1,8 @@
-service:
-  type: NodePort
-  nodePorts:
-    http: "30081"
-    https: "30082"
+# service:
+#   type: NodePort
+#   nodePorts:
+#     http: "30081"
+#     https: "30082"
 auth:
   adminPassword: "admin1234"
   managementPassword: "admin1234"
