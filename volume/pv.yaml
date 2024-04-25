@@ -4,7 +4,7 @@ metadata:
   name: demo-pv
 spec:
   capacity:
-    storage: 50Gi
+    storage: 100Gi
   accessModes:
     - ReadWriteMany
   hostPath:
