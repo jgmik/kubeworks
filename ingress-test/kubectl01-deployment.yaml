@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubectl01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubectl01
+  template:
+    metadata:
+      name: kubectl01
+      labels:
+        app: kubectl01
+    spec:
+      containers:
+      - name: kubectl
+        image: achlanevenson/k8s-kubectl
+        # ports:
+        # - name: http
+        #   containerPort: 80
+        #   protocol: TCP
