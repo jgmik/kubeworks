@@ -17,7 +17,7 @@ spec:
       - name: kubectl
         image: lachlanevenson/k8s-kubectl
         ttyEnabled: true
-        command: ['cat']
+        command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
         # ports:
         # - name: http
         #   containerPort: 8080
