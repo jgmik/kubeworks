@@ -17,7 +17,7 @@ rules:
   - replicasets
   - podtemplates
   - podsecuritypolicies
-  - pods
+  # - pods
   - pods/log
   - pods/exec
   - podpreset
@@ -34,7 +34,6 @@ rules:
   - namespaces
   - events
   - secrets
-  - serviceaccount
   verbs:
   - create
   - get
