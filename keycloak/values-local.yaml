@@ -13,7 +13,7 @@ ingress:
 postgresql:
   enabled: true
   auth:
-    pastgresPassword: ""
+    pastgresPassword: admin1234
     username: keycloak
     password: "keycloak"
     database: keycloak
