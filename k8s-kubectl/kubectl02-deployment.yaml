@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: kubectl-user
+spec:
+  serviceaccount: kubectl-user
+  containers:
+  - name: kubectl
+    image: lachlanevenson/k8s-kubectl
+    ttyEnabled: true
+    command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
+    # ports:
+    # - name: http
+    #   containerPort: 8080
+    #   protocol: TCP
