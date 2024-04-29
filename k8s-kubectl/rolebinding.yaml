@@ -10,8 +10,8 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: kubectl-user
+  name: kubectl-user-role
 subjects:
 - kind: ServiceAccount
-  name: default
+  name: kubectl-user
   namespace: k8s-kubectl
