@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: kubectl-user
 spec:
-  # serviceaccount: kubectl-user
+  serviceaccount: kubectl-user
   containers:
   - name: kubectl
     image: lachlanevenson/k8s-kubectl
