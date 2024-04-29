@@ -2,10 +2,9 @@ kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
   name: test-sc
-namespace: volume
-name: my-storage
+  namespace: volume
 annotations:
     storageclass.beta.kubernetes.io/is-default-class: "false"
 labels:
     kubernetes.io/cluster-service: "true"
-provisioner: kubernetes.io/host-path
+provisioner: kubernetes.io/no-provisioner
