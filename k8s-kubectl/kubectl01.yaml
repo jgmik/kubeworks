@@ -1,9 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kubectl-user
+  name: kubectl-default
 spec:
-  serviceAccountName: kubectl-user
   containers:
   - name: kubectl
     image: lachlanevenson/k8s-kubectl
