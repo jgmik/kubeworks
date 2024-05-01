@@ -5,7 +5,7 @@ metadata:
     rbac.authorization.kubernetes.io/autoupdate: "true"
   labels:
     kubernetes.io/bootstrapping: rbac-defaults
-  namespace: k8s-kubectl
+  namespace: kubeworks
   name: kubeworks-user-rolebinding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
