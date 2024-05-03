@@ -6,7 +6,7 @@ spec:
   capacity:
     storage: 100Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   hostPath:
     path: "/pv/log"
   persistentVolumeReclaimPolicy: Retain
