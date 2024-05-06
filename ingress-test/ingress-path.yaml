@@ -40,14 +40,3 @@ spec:
             name: argocd-server
             port:
               name: http
-  - host: k-jenkins.softworks.co.kr
-    http:
-      paths:
-      # - path: /grafana
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: hello2
-            port:
-              name: http
