@@ -29,3 +29,14 @@ spec:
             name: grafana
             port:
               name: http
+  - host: k-argocd.softworks.co.kr
+    http:
+      paths:
+      # - path: /grafana
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: http
