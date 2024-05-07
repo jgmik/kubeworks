@@ -7,6 +7,8 @@ hub:
   scheduling:
     userScheduler:
       enabled: false
-proxy:
   service:
     type: NodePort
+# proxy:
+#   service:
+#     type: NodePort
