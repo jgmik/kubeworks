@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-jupyterhub2
+  name: pv-data10G-0
 spec:
   capacity:
-    storage: 1Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/pv/jupyterhub2"
+    path: "/pv/data10G-0"
   persistentVolumeReclaimPolicy: Retain
