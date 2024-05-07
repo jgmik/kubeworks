@@ -12,6 +12,3 @@ hub:
 proxy:
   service:
     type: NodePort
-    nodePorts:
-      http: 30081
-      https: 300
