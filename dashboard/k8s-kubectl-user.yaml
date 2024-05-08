@@ -6,3 +6,25 @@ metadata:
   annotations:
     kubernetes.io/service-account.name: "kubectl-user"   
 type: kubernetes.io/service-account-token
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubeworks-user
+  namespace: k8s-kubectl
+  annotations:
+    kubernetes.io/service-account.name: "kubeworks-user"   
+type: kubernetes.io/service-account-token
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: default
+  namespace: k8s-kubectl
+  annotations:
+    kubernetes.io/service-account.name: "default"   
+type: kubernetes.io/service-account-token
