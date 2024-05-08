@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubectl-user
+  namespace: k8s-kubectl
+  annotations:
+    kubernetes.io/service-account.name: "kubectl-user"   
+type: kubernetes.io/service-account-token
