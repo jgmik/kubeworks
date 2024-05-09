@@ -1,5 +1,5 @@
-# global:
-#   storageClass: local-storage
+global:
+  storageClass: nfs
 service:
   type: NodePort
   nodePorts:
