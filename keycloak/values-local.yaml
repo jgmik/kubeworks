@@ -15,9 +15,9 @@ auth:
 postgresql:
   enabled: true
   auth:
-    postgresPassword: "admin1234"
+    postgresPassword: admin1234
     username: bn_keycloak
-    password: "admin1234"
+    password: admin1234
     database: bitnami_keycloak
     existingSecret: ""
   architecture: standalone
