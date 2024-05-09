@@ -1,5 +1,5 @@
 global:
-  storageClass: nfs
+  storageClass: nfs-client
 service:
   type: NodePort
   nodePorts:
