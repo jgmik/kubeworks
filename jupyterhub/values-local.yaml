@@ -9,6 +9,9 @@
 #       enabled: false
   # service:
   #   type: NodePort
+  db:
+    pvc:
+      storageClassName: nfs-client
 proxy:
   service:
     type: NodePort
