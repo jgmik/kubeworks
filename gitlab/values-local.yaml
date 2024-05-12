@@ -1,4 +1,27 @@
 global:
+  edition: ce #onprom
   hosts:
-    domain: k-gitlab.softworks.co.kr
+    domain: k-gitlab.softworks.co.kr  #onprom
+    # externalIP: 
     https: true
+  ingress:
+    configureCertmanager: false
+    provider: nginx
+    class: nginx
+    enabled: true
+    tls: 
+      enabled: true
+certmanager-issuer:
+  email: jmsk80@softworks.co.kr
+# postgresql:
+#   image:
+#     tag: 
+
+certmanager:
+  installCRDs: false
+nginx-ingress:
+  enabled: false
+prometheus:
+  install: false
+gitlab-runner:
+  install: false
