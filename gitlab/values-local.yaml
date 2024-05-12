@@ -22,6 +22,10 @@ global:
       enabled: true #on-prem
 certmanager-issuer:
   email: jmsk80@softworks.co.kr
+
+certmanager:
+  install: false
+
 # postgresql:
 #   image:
 #     tag: 
