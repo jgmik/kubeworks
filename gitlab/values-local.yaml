@@ -1,0 +1,5 @@
+global:
+  hosts:
+    domain: k-gitlab.softworks.co.kr
+    hostSuffix:
+    https: false
