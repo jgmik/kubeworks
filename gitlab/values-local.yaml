@@ -1,16 +1,25 @@
 global:
-  edition: ce #onprom
+  edition: ce #on-prem
   hosts:
-    domain: k-gitlab.softworks.co.kr  #onprom
+    domain: softworks.co.kr  #on-prem
     # externalIP: 
     https: true
+    gitlab:
+      name: k-gitlab.softworks.co.kr
+      https: true
+    minio:
+      name: k-minio.softworks.co.kr
+      https: true
+    registry:
+      name: k-registry.softworks.co.kr
+      https: true
   ingress:
-    configureCertmanager: false
-    provider: nginx
-    class: nginx
-    enabled: true
+    configureCertmanager: false #on-prem
+    provider: nginx #on-prem
+    class: nginx  #on-prem
+    enabled: true #on-prem
     tls: 
-      enabled: true
+      enabled: true #on-prem
 certmanager-issuer:
   email: jmsk80@softworks.co.kr
 # postgresql:
@@ -18,12 +27,12 @@ certmanager-issuer:
 #     tag: 
 
 certmanager:
-  installCRDs: false
+  installCRDs: false  #on-prem
 nginx-ingress:
-  enabled: false
+  enabled: false  #on-prem
 prometheus:
-  install: false
+  install: false  #on-prem
 gitlab-runner:
-  install: false
+  install: false  #on-prem
 upgradeCheck:
   enabled: false
