@@ -17,7 +17,7 @@ spec:
       containers:
       - name: httpd
 #        image: node:18.13.0-alpine
-        image: kimjonggu/xtermjs:latest
+        image: kimjonggu/xtermjs:0.01
         ports:
         - name: http
           containerPort: 80
