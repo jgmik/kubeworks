@@ -22,5 +22,5 @@ spec:
         - name: http
           containerPort: 80
         command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
-      imagePullSecrets:
-      - name: regcred
+      # imagePullSecrets:
+      # - name: regcred
