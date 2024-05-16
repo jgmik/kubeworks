@@ -17,7 +17,7 @@ spec:
       containers:
       - name: httpd
 #        image: node:18.13.0-alpine
-        image: devworks.softworks.co.kr:9003/xtermjs/xtermjs-test
+        image: kimjonggu/xtermjs:test
         ports:
         - name: http
           containerPort: 80
