@@ -11,9 +11,11 @@ metadata:
     template: kubebox
   namespace: kubebox
 spec:
+  type: NodePort
   ports:
     - name: kubebox
       protocol: TCP
+      nodePort: 30092
       port: 8080
       targetPort: 8080
   selector:
