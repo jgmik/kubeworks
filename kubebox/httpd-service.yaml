@@ -1,16 +1,16 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: kubebox
-  labels:
-    app: "kubebox"
-spec:
-  type: NodePort
-  ports:
-  - name: http
-    nodePort: 30092
-    protocol: TCP
-    port: 8080
-    targetPort: 8080
-  selector:
-    app: "kubebox"
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: kubebox
+#   labels:
+#     app: "kubebox"
+# spec:
+#   type: NodePort
+#   ports:
+#   - name: http
+#     nodePort: 30092
+#     protocol: TCP
+#     port: 8080
+#     targetPort: 8080
+#   selector:
+#     app: "kubebox"

@@ -1,30 +1,30 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: kubebox
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: kubebox
-  template:
-    metadata:
-      labels:
-        app: kubebox
-    spec:
-      containers:
-      - name: kubebox
-        image: astefanutti/kubebox:latest
-        ports:
-        - containerPort: 8080
-        volumeMounts:
-        - name: kubeconfig
-          mountPath: /root/.kube/config
-          subPath: kubeconfig # 여기서 "config"는 ConfigMap의 key와 일치해야 함
-      volumes:
-      - name: kubeconfig
-        configMap:
-          name: kubeconfig
-          items:
-          - key: kubeconfig  # ConfigMap에 정의된 key
-            path: config  # 컨테이너 내부에서 사용될 파일 이름
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: kubebox
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: kubebox
+#   template:
+#     metadata:
+#       labels:
+#         app: kubebox
+#     spec:
+#       containers:
+#       - name: kubebox
+#         image: astefanutti/kubebox:latest
+#         ports:
+#         - containerPort: 8080
+#         volumeMounts:
+#         - name: kubeconfig
+#           mountPath: /root/.kube/config
+#           subPath: kubeconfig # 여기서 "kubeconfig"는 ConfigMap의 key와 일치해야 함
+#       volumes:
+#       - name: kubeconfig
+#         configMap:
+#           name: kubeconfig
+#           items:
+#           - key: kubeconfig  # ConfigMap에 정의된 key
+#             path: config  # 컨테이너 내부에서 사용될 파일 이름
