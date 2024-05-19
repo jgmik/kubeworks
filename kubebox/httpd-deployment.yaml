@@ -20,7 +20,9 @@ spec:
         volumeMounts:
         - name: kubeconfig
           mountPath: /root/.kube
+          subPath: config
       volumes:
       - name: kubeconfig
         hostPath:
           path: /root/.kube/config
+          type: File
