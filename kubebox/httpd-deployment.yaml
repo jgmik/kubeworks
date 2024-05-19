@@ -19,8 +19,8 @@ spec:
         - containerPort: 8080
         volumeMounts:
         - name: kubeconfig
-          mountPath: /root/.kube
-          # subPath: config
+          mountPath: /root/.kube/config
+          subPath: kubeconfig
       volumes:
       - name: kubeconfig
         configMap:
