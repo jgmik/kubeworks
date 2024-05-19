@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: httpd
-  labels:
-    app: "httpd"
+  name: kubebox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "httpd"
+      app: kubebox
   template:
     metadata:
       labels:
-        app: "httpd"
+        app: kubebox
     spec:
       containers:
-      - name: httpd
-#        image: node:18.13.0-alpine
-        image: node:18.13.0
+      - name: kubebox
+        image: astefanutti/kubebox:latest
         ports:
-        - name: http
-          containerPort: 80
-        command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
-      # imagePullSecrets:
-      # - name: regcred
+        - containerPort: 8080
+        volumeMounts:
+        - name: kubeconfig
+          mountPath: /root/.kube
+      volumes:
+      - name: kubeconfig
+        hostPath:
+          path: /root/.kube/config
