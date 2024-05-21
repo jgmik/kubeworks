@@ -4,6 +4,14 @@ metadata:
   name: webssh2-sa
   namespace: websshk
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: webssh2-sa-token
+  annotations:
+    kubernetes.io/service-account.name: webssh2-sa
+type: kubernetes.io/service-account-token
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
