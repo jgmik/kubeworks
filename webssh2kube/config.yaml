@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webssh2-config
+  namespace: websshk
+data:
+  config.json: |
+    {
+      "listen": {
+        "ip": "0.0.0.0",
+        "port": 2222
+      },
+      "ssh": {
+        "enabled": true,
+        "allowlist": ["0.0.0.0/0"],
+        "clients": [
+          {
+            "commands": [
+              "kubectl -n k8s-kubectl exec -it kubectl-user -- /bin/bash"
+            ]
+          }
+        ]
+      }
+    }
