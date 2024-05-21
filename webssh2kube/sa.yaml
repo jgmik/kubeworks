@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: webssh2-sa
-  # namespace: default
+  namespace: default
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -20,7 +20,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: webssh2-sa
-    # namespace: default
+    namespace: default
 roleRef:
   kind: ClusterRole
   name: webssh2-cluster-role
