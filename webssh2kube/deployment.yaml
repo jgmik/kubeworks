@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webssh2
+  namespace: websshk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webssh2
+  template:
+    metadata:
+      labels:
+        app: webssh2
+    spec:
+      serviceAccountName: webssh2-sa
+      containers:
+      - name: webssh2
+        image: psharkey/webssh2
+        ports:
+        - containerPort: 2222
+        volumeMounts:
+        - name: kubeconfig
+          mountPath: /root/.kube
+        - name: config
+          mountPath: /app/config
+      volumes:
+      - name: kubeconfig
+        configMap:
+          name: kubeconfig
+      - name: config
+        configMap:
+          name: webssh2-config
