@@ -12,13 +12,6 @@ data:
       },
       "ssh": {
         "enabled": true,
-        "allowlist": ["0.0.0.0/0"],
-        "clients": [
-          {
-            "commands": [
-              "kubectl -n k8s-kubectl exec -it kubectl-user -- /bin/bash"
-            ]
-          }
-        ]
+        "allowlist": ["0.0.0.0/0"]
       }
     }
