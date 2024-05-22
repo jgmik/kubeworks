@@ -18,7 +18,7 @@ data:
         "allowlist": ["0.0.0.0/0"]
       },
       "user": {
-        "name": null,
-        "password": null
+        "name": "admin",
+        "password": "admin1234"
       }
     }
