@@ -1,0 +1,10 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: xterm-user
+    namespace: xtermjsk2
+kind: List
+metadata:
+  resourceVersion: ""

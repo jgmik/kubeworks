@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd
+  labels:
+    app: "httpd"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "httpd"
+  template:
+    metadata:
+      labels:
+        app: "httpd"
+    spec:
+      serviceAccountName: xterm-user
+      containers:
+      - name: httpd
+#        image: node:18.13.0-alpine
+        image: kimjonggu/xtermjs:0.03
+        ports:
+        - name: http
+          containerPort: 3000
+        command: ["yarn","start"]
+      # imagePullSecrets:
+      # - name: regcred
