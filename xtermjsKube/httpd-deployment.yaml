@@ -5,7 +5,7 @@ metadata:
   labels:
     app: "httpd"
 spec:
-  # serviceAccountName: xterm-user
+  serviceAccountName: xterm-user
   replicas: 1
   selector:
     matchLabels:
@@ -22,6 +22,6 @@ spec:
         ports:
         - name: http
           containerPort: 3000
-        command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
+        command: ["/bin/sh","yarn start"]
       # imagePullSecrets:
       # - name: regcred
