@@ -5,7 +5,7 @@ metadata:
   labels:
     app: "httpd"
 spec:
-  serviceAccountName: xterm-user
+  # serviceAccountName: xterm-user
   replicas: 1
   selector:
     matchLabels:
