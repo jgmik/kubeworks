@@ -22,6 +22,6 @@ spec:
         ports:
         - name: http
           containerPort: 3000
-        command: ["/bin/sh","yarn start"]
+        command: ["/bin/sh","/app/yarn start"]
       # imagePullSecrets:
       # - name: regcred
