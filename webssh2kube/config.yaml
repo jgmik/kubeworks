@@ -16,5 +16,9 @@ data:
       "ssh": {
         "enabled": true,
         "allowlist": ["0.0.0.0/0"]
+      },
+      "user": {
+        "name": null,
+        "password": null
       }
     }
