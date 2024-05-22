@@ -4,8 +4,8 @@ metadata:
   name: httpd
   labels:
     app: "httpd"
-serviceAccountName: xterm-user
 spec:
+  serviceAccountName: xterm-user
   replicas: 1
   selector:
     matchLabels:
