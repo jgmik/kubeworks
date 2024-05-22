@@ -10,7 +10,7 @@ spec:
   - name: http
     nodePort: 30096
     protocol: TCP
-    port: 80
+    port: 3000
     targetPort: 3000
   selector:
     app: "httpd"
