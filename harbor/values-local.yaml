@@ -1,0 +1,4 @@
+registry:
+  credentials:
+    username: "admin"
+    password: "admin1234"
