@@ -6,3 +6,11 @@ spec:
   audiences:
   - https://kubernetes.default.svc.cluster.local
   expirationSeconds: 3600
+
+---
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: test-user
+  namespace: kubernetes-dashboard
