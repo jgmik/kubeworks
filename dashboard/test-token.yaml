@@ -14,3 +14,14 @@ kind: ServiceAccount
 metadata:
   name: test-user
   namespace: kubernetes-dashboard
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: test-user
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: "test-user"   
+type: kubernetes.io/service-account-token
