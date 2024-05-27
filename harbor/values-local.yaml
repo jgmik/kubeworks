@@ -4,8 +4,8 @@ expose:
   type: ingress
   ingress:
     hosts:
-      core: k-harbor.softworks.co.kr:31370
-      notary: notary.k-harbor.softworks.co.kr:31370
+      core: k-harbor.softworks.co.kr
+      notary: notary.k-harbor.softworks.co.kr
     annotations:
       kubernetes.io/ingress.class: "nginx"
     tls: []
