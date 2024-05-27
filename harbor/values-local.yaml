@@ -1,13 +1,25 @@
+hostname: harbor.my-domain.com
+
 expose:
   type: ingress
   ingress:
     hosts:
       core: k-harbor.softworks.co.kr:31370
       notary: notary.k-harbor.softworks.co.kr:31370
-    controller: default
-    className: "nginx"
-externalURL: http://k-harbor.softworks.co.kr:31370
-registry:
-  credentials:
-    username: "admin"
-    password: "admin1234"
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+
+harborAdminPassword: "admin1234"
+
+persistence:
+  persistentVolumeClaim:
+    registry:
+      size: 50Gi
+    chartmuseum:
+      size: 5Gi
+    jobservice:
+      size: 1Gi
+    redis:
+      size: 1Gi
+    trivy:
+      size: 5Gi
