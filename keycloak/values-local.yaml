@@ -7,7 +7,7 @@ service:
     https: 30084
 auth:
   adminPassword: "admin1234"
-  # managementPassword: "admin1234"
+  managementPassword: "admin1234"
 # ingress:
 #   enabled: true
 #   ingressClassName: nginx # 사용하는 ingress class
@@ -15,9 +15,9 @@ auth:
 postgresql:
   enabled: true
   auth:
-    postgresPassword: admin1234
-    username: bn_keycloak
-    password: admin1234
-    database: bitnami_keycloak
+    # postgresPassword: admin1234
+    username: keycloak
+    password: "keycloak"
+    database: keycloak
     existingSecret: ""
   architecture: standalone
