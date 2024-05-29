@@ -19,6 +19,10 @@ ingress:
     nginx.ingress.kubernetes.io/session-cookie-path: "/" #test
     nginx.ingress.kubernetes.io/session-cookie-samesite: "None" #test
     nginx.ingress.kubernetes.io/session-cookie-secure: "true" #test
+  tls:
+    - hosts:
+      - k-keycloak.softworks.co.kr
+      secretName: keycloak-tls-secret
 
 keycloak:
   proxy: edge
