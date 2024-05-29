@@ -59,8 +59,9 @@ extraEnv: |
     value: "false"
   - name: KEYCLOAK_COOKIE_SAME_SITE
     value: "Lax"
-# keycloak:
-#   proxy: edge
+keycloak:
+  proxy: edge
+  
 # extraEnv:
 #   - name: KEYCLOAK_COOKIE_SECURE
 #     value: "true"
