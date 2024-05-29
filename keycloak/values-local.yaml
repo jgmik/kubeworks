@@ -9,6 +9,20 @@ auth:
   adminUser: "admin"
   adminPassword: "admin1234"
   managementPassword: "admin1234"
+adminIngress:
+  enabled: true
+  hostname: k-keycloak.softworks.co.kr
+keycloakConfigCli:
+  enabled: true
+  configuration:
+    master.json: |
+      {
+        "realm" : "master",
+        "attributes": {
+          "frontendUrl": "http://k-keycloak.softworks.co.kr:31370"
+        }
+      }
+
 ingress:
   enabled: true
   ingressClassName: nginx # 사용하는 ingress class
@@ -20,16 +34,18 @@ ingress:
   #   nginx.ingress.kubernetes.io/session-cookie-path: "/" #test
   #   nginx.ingress.kubernetes.io/session-cookie-samesite: "None" #test
   #   nginx.ingress.kubernetes.io/session-cookie-secure: "true" #test
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
-    nginx.ingress.kubernetes.io/proxy-buffering: "on"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-    nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION"
-    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
-    nginx.ingress.kubernetes.io/session-cookie-path: "/"
-    nginx.ingress.kubernetes.io/session-cookie-samesite: "None"
-    nginx.ingress.kubernetes.io/session-cookie-secure: "true"
+
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    # nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    # nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    # nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION"
+    # nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
+    # nginx.ingress.kubernetes.io/session-cookie-path: "/"
+    # nginx.ingress.kubernetes.io/session-cookie-samesite: "None"
+    # nginx.ingress.kubernetes.io/session-cookie-secure: "true"
+
   # tls:
   #   - hosts:
   #     - k-keycloak.softworks.co.kr
