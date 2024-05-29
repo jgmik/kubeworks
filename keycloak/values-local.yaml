@@ -1,0 +1,40 @@
+global:
+  storageClass: nfs-client
+
+auth:
+  adminPassword: "admin1234"
+  managementPassword: "admin1234"
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: k-keycloak.softworks.co.kr
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+
+adminIngress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: k-keycloakadm.softworks.co.kr
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+
+keycloak:
+  extraEnv: |
+    - name: PROXY_ADDRESS_FORWARDING
+      value: "true"
+    - name: KEYCLOAK_COOKIE_SECURE
+      value: "true"
+    - name: KEYCLOAK_COOKIE_SAME_SITE
+      value: "None"
+
+postgresql:
+  enabled: true
+  auth:
+    username: keycloak
+    password: "keycloak"
+    database: keycloak
+    existingSecret: ""
+  architecture: standalone
