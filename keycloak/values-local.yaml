@@ -20,7 +20,7 @@ keycloakConfigCli:
       {
         "realm" : "master",
         "attributes": {
-          "frontendUrl": "http://k-keycloak.softworks.co.kr:31370"
+          "frontendUrl": "http://k-keycloakadm.softworks.co.kr:31370"
         }
       }
 
