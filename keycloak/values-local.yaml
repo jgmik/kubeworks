@@ -13,6 +13,8 @@ adminIngress:
   enabled: true
   ingressClassName: "nginx"
   hostname: k-keycloakadm.softworks.co.kr
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 keycloakConfigCli:
   enabled: true
   configuration:
@@ -28,7 +30,8 @@ ingress:
   enabled: true
   ingressClassName: nginx # 사용하는 ingress class
   hostname: k-keycloak.softworks.co.kr # 원하는 domain
-  # annotations:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
   #   nginx.ingress.kubernetes.io/ssl-redirect: "true"  #test
   #   nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION" #test
   #   nginx.ingress.kubernetes.io/session-cookie-hash: "sha1" #test
@@ -51,7 +54,11 @@ ingress:
   #   - hosts:
   #     - k-keycloak.softworks.co.kr
   #     secretName: keycloak-tls-secret
-
+extraEnv: |
+  - name: KEYCLOAK_COOKIE_SECURE
+    value: "false"
+  - name: KEYCLOAK_COOKIE_SAME_SITE
+    value: "Lax"
 # keycloak:
 #   proxy: edge
 # extraEnv:
