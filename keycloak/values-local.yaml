@@ -12,6 +12,13 @@ ingress:
   enabled: true
   ingressClassName: nginx # 사용하는 ingress class
   hostname: k-keycloak.softworks.co.kr # 원하는 domain
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"  #test
+    nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION" #test
+    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1" #test
+    nginx.ingress.kubernetes.io/session-cookie-path: "/" #test
+    nginx.ingress.kubernetes.io/session-cookie-samesite: "None" #test
+    nginx.ingress.kubernetes.io/session-cookie-secure: "true" #test
 
 keycloak:
   proxy: edge
