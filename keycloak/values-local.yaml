@@ -26,7 +26,11 @@ ingress:
 
 keycloak:
   proxy: edge
-
+extraEnv:
+  - name: KEYCLOAK_COOKIE_SECURE
+    value: "true"
+  - name: KEYCLOAK_COOKIE_SAME_SITE
+    value: "None"
 postgresql:
   enabled: true
   auth:
