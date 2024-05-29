@@ -6,13 +6,13 @@ global:
 #     http: 30083
 #     https: 30084
 auth:
-  adminUser: "admin"
+  adminUser: admin
   adminPassword: "admin1234"
   managementPassword: "admin1234"
 adminIngress:
   enabled: true
   ingressClassName: "nginx"
-  hostname: k-keycloak.softworks.co.kr
+  hostname: k-keycloakadm.softworks.co.kr
 keycloakConfigCli:
   enabled: true
   configuration:
@@ -20,7 +20,7 @@ keycloakConfigCli:
       {
         "realm" : "master",
         "attributes": {
-          "frontendUrl": "http://k-keycloak.softworks.co.kr:31370"
+          "frontendUrl": "http://k-keycloakadm.softworks.co.kr:31370"
         }
       }
 
