@@ -11,6 +11,7 @@ auth:
   managementPassword: "admin1234"
 adminIngress:
   enabled: true
+  ingressClassName: "nginx"
   hostname: k-keycloak.softworks.co.kr
 keycloakConfigCli:
   enabled: true
