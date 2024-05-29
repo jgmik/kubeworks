@@ -20,14 +20,14 @@ keycloakConfigCli:
       {
         "realm" : "master",
         "attributes": {
-          "frontendUrl": "http://k-keycloakadm.softworks.co.kr:31370"
+          "frontendUrl": "http://k-keycloak.softworks.co.kr:31370"
         }
       }
 
 ingress:
   enabled: true
   ingressClassName: nginx # 사용하는 ingress class
-  hostname: k-keycloak-client.softworks.co.kr # 원하는 domain
+  hostname: k-keycloak.softworks.co.kr # 원하는 domain
   # annotations:
   #   nginx.ingress.kubernetes.io/ssl-redirect: "true"  #test
   #   nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION" #test
