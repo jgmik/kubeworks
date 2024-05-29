@@ -6,6 +6,7 @@ global:
 #     http: 30083
 #     https: 30084
 auth:
+  adminUser: "admin"
   adminPassword: "admin1234"
   managementPassword: "admin1234"
 ingress:
