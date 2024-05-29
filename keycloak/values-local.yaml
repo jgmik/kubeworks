@@ -12,6 +12,10 @@ ingress:
   enabled: true
   ingressClassName: nginx # 사용하는 ingress class
   hostname: k-keycloak.softworks.co.kr # 원하는 domain
+
+keycloak:
+  proxy: edge
+
 postgresql:
   enabled: true
   auth:
