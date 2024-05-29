@@ -13,17 +13,27 @@ ingress:
   enabled: true
   ingressClassName: nginx # 사용하는 ingress class
   hostname: k-keycloak.softworks.co.kr # 원하는 domain
-  annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"  #test
-    nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION" #test
-    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1" #test
-    nginx.ingress.kubernetes.io/session-cookie-path: "/" #test
-    nginx.ingress.kubernetes.io/session-cookie-samesite: "None" #test
-    nginx.ingress.kubernetes.io/session-cookie-secure: "true" #test
-  tls:
-    - hosts:
-      - k-keycloak.softworks.co.kr
-      secretName: keycloak-tls-secret
+  # annotations:
+  #   nginx.ingress.kubernetes.io/ssl-redirect: "true"  #test
+  #   nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION" #test
+  #   nginx.ingress.kubernetes.io/session-cookie-hash: "sha1" #test
+  #   nginx.ingress.kubernetes.io/session-cookie-path: "/" #test
+  #   nginx.ingress.kubernetes.io/session-cookie-samesite: "None" #test
+  #   nginx.ingress.kubernetes.io/session-cookie-secure: "true" #test
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/session-cookie-name: "KEYCLOAK_SESSION"
+    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
+    nginx.ingress.kubernetes.io/session-cookie-path: "/"
+    nginx.ingress.kubernetes.io/session-cookie-samesite: "None"
+    nginx.ingress.kubernetes.io/session-cookie-secure: "true"
+  # tls:
+  #   - hosts:
+  #     - k-keycloak.softworks.co.kr
+  #     secretName: keycloak-tls-secret
 
 keycloak:
   proxy: edge
@@ -32,6 +42,9 @@ extraEnv:
     value: "true"
   - name: KEYCLOAK_COOKIE_SAME_SITE
     value: "None"
+  - name: PROXY_ADDRESS_FORWARDING
+    value: "true"
+
 postgresql:
   enabled: true
   auth:
