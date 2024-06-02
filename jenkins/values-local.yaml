@@ -1,2 +1,5 @@
 controller:
   javaOpts: "-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
+  securityContext:
+    runAsUser: 1000
+    fsGroup: 1000
