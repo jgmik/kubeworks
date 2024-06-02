@@ -3,3 +3,32 @@ controller:
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
+  JCasC:
+    configScripts:
+      customAgent: |
+        jenkins:
+          clouds:
+            - kubernetes:
+                name: "kubernetes"
+                templates:
+                  - name: "jenkins-agent"
+                    label: "jenkins-agent"
+                    containers:
+                      - name: "jnlp"
+                        image: "jenkins/inbound-agent"
+                        args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
+                      - name: "busybox"
+                        image: "busybox"
+                        command: ["cat"]
+                        tty: true
+                    initContainers:
+                      - name: "init-permissions"
+                        image: "busybox"
+                        command: ['sh', '-c', 'chown -R jenkins:jenkins /home/jenkins/agent/workspace && chmod -R 755 /home/jenkins/agent/workspace']
+                        volumeMounts:
+                          - name: "workspace-volume"
+                            mountPath: "/home/jenkins/agent/workspace"
+                    volumes:
+                      - name: "workspace-volume"
+                        persistentVolumeClaim:
+                          claimName: "jenkins-workspace-pvc"
