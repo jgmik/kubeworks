@@ -8,3 +8,14 @@ items:
 kind: List
 metadata:
   resourceVersion: ""
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sa-test
+  namespace: jenkins
+  annotations:
+    kubernetes.io/service-account.name: "sa-test"  
+type: kubernetes.io/service-account-token
