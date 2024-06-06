@@ -39,7 +39,7 @@ global:
   appConfig:
     omniauth:
       enabled: true
-      auto_sign_in_with_provider: 'keycloak'
+      auto_sign_in_with_provider: 'openid_connect'
       external_providers: ['openid_connect']
       allow_single_sign_on: ['openid_connect']
       block_auto_created_users: false
@@ -48,19 +48,7 @@ global:
       sync_profile_attributes: ['email', 'name']
       sync_ssh_keys: false
       providers:
-        - name: 'openid_connect'
-          label: 'keycloak'
-          args:
-            name: 'openid_connect'
-            scope: ['openid', 'profile', 'email']
-            response_type: 'code'
-            issuer: 'http://k-keycloak.softworks.co.kr:31370/auth/realms/kubeworks'
-            discovery: true
-            client_auth_method: 'query'
-            uid_field: 'preferred_username'
-            client_id: 'gitlab'
-            client_secret: '7xrYVga9Gliw2vuXtaGAcNOVAjluj10l'
-            redirect_uri: 'https://k-gitlab.softworks.co.kr:31089/users/auth/openid_connect/callback'
+        - secret: gitlab-keycloak-oidc-secret
 certmanager-issuer:
   email: jmsk80@softworks.co.kr
 
