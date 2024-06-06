@@ -50,7 +50,6 @@ global:
       providers:
         - name: 'openid_connect'
           label: 'keycloak'
-          icon: 'keycloak'
           args:
             name: 'openid_connect'
             scope: ['openid', 'profile', 'email']
