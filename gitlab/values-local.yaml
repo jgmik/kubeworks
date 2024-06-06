@@ -40,11 +40,11 @@ global:
     omniauth:
       enabled: true
       auto_sign_in_with_provider: 'keycloak'
-      external_providers: ['keycloak']
+      external_providers: ['openid_connect']
       allow_single_sign_on: ['openid_connect']
       block_auto_created_users: false
       auto_link_saml_user: false
-      sync_profile_from_provider: ['keycloak']
+      sync_profile_from_provider: ['openid_connect']
       sync_profile_attributes: ['email', 'name']
       sync_ssh_keys: false
       providers:
