@@ -37,7 +37,7 @@ global:
   #         client_secret: '7xrYVga9Gliw2vuXtaGAcNOVAjluj10l'  # 여기에도 동일한 비밀 키를 넣습니다
   #         redirect_uri: 'https://k-gitlab.softworks.co.kr:31089/users/auth/openid_connect/callback'
   appConfig:
-    omniauth:
+    # omniauth:
       # enabled: true
       # auto_sign_in_with_provider: 'openid_connect'
       # external_providers: ['openid_connect']
@@ -47,8 +47,19 @@ global:
       # sync_profile_from_provider: ['openid_connect']
       # sync_profile_attributes: ['email', 'name']
       # sync_ssh_keys: false
+      # providers:
+      #   - secret: gitlab-keycloak-oidc-secret
+    omniauth:
+      enabled: true
+      autoSignInWithProvider: 'saml'
+      blockAutoCreatedUsers: false
+      allowSingleSignOn: ['saml']
+      syncProfileFromProvider: ['saml']
+      syncProfileAttributes: ['email']
       providers:
-        - secret: gitlab-keycloak-oidc-secret
+        - secret: omniauth-saml
+
+
 certmanager-issuer:
   email: jmsk80@softworks.co.kr
 
