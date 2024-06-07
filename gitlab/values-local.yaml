@@ -3,10 +3,9 @@ global:
   hosts:
     domain: softworks.co.kr  #on-prem
     # externalIP: 
-    https: false
     gitlab:
       name: k-gitlab.softworks.co.kr
-      https: true
+      https: false
     minio:
       name: k-minio.softworks.co.kr
       https: true
