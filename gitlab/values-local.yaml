@@ -2,6 +2,7 @@ global:
   edition: ce #on-prem
   hosts:
     domain: softworks.co.kr  #on-prem
+    https: false
     # externalIP: 
     gitlab:
       name: k-gitlab.softworks.co.kr
