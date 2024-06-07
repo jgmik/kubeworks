@@ -5,8 +5,7 @@ metadata:
   namespace: gitlab
 type: Opaque
 stringData:
-  provider: "saml"
-  args: |
+  provider: |
     name: 'saml'
     label: 'SAML'
     args:
