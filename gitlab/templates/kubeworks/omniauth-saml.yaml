@@ -11,7 +11,7 @@ stringData:
     args:
       assertion_consumer_service_url: 'https://k-gitlab.softworks.co.kr:31098/users/auth/saml/callback'
       idp_cert_fingerprint: 'd26c909cde8663f14217efe41b3528a70aab3dce'
-      idp_sso_target_url: 'http://k-keycloak.softworks.co.kr:31370/auth/realms/kebeworks/protocol/saml/clients/gitlab'
+      idp_sso_target_url: 'http://k-keycloakadm.softworks.co.kr:31370/realms/kebeworks/protocol/saml/clients/gitlab'
       issuer: 'gitlab'
       name_identifier_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient'
       uid_attribute: 'NameID'
