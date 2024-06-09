@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: configmap
+metadata:
+  name: omniauth-saml-cm
+  namespace: gitlab
+stringData:
+  provider: |
+    name: 'saml'
+    label: 'SAML'
+    groups_attribute: 'roles'
+    required_groups: ['gitlab.softworks.co.kr:external','gitlab.softworks.co.kr:admin']
+    external_groups: ['gitlab.softworks.co.kr:external']
+    admin_groups: ['gitlab.softworks.co.kr:admin']
+    args:
+      assertion_consumer_service_url: 'https://k-gitlab.softworks.co.kr:31098/users/auth/saml/callback'
+      idp_cert_fingerprint: 'd26c909cde8663f14217efe41b3528a70aab3dce'
+      idp_sso_target_url: 'http://k-keycloakadm.softworks.co.kr:31370/realms/kubeworks/protocol/saml/clients/gitlab'
+      allowed_clock_drift: 5
+      issuer: 'gitlab'
+      attribute_statments:
+        first_name: ['first_name']
+        last_name: ['last_name']
+        name: ['name']
+        username: ['name']
+        email: ['email']
+      name_identifier_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent'
+   
