@@ -37,30 +37,30 @@ global:
   #         client_secret: '7xrYVga9Gliw2vuXtaGAcNOVAjluj10l'  # 여기에도 동일한 비밀 키를 넣습니다
   #         redirect_uri: 'https://k-gitlab.softworks.co.kr:31089/users/auth/openid_connect/callback'
   appConfig:
-    # omniauth:
-      # enabled: true
-      # auto_sign_in_with_provider: 'openid_connect'
-      # external_providers: ['openid_connect']
-      # allow_single_sign_on: ['openid_connect']
-      # block_auto_created_users: false
-      # auto_link_saml_user: false
-      # sync_profile_from_provider: ['openid_connect']
-      # sync_profile_attributes: ['email', 'name']
-      # sync_ssh_keys: false
-      # providers:
-      #   - secret: gitlab-keycloak-oidc-secret
     omniauth:
       enabled: true
-      allowSingleSignOn: ['saml']
-      autoSignInWithProvider: 'saml'
-      blockAutoCreatedUsers: false
-      # syncProfileFromProvider: ['saml']
-      # syncProfileAttributes: ['email']
-      autoLinkSamlUser: true
+      auto_sign_in_with_provider: 'openid_connect'
+      external_providers: ['openid_connect']
+      allow_single_sign_on: ['openid_connect']
+      block_auto_created_users: false
+      auto_link_saml_user: false
+      sync_profile_from_provider: ['openid_connect']
+      sync_profile_attributes: ['email', 'name']
+      sync_ssh_keys: false
       providers:
-        - secret: omniauth-saml
-        # - configmapRef: 
-        #     name: omniauth-saml-cm
+        - secret: gitlab-keycloak-oidc-secret
+    # omniauth:
+    #   enabled: true
+    #   allowSingleSignOn: ['saml']
+    #   autoSignInWithProvider: 'saml'
+    #   blockAutoCreatedUsers: false
+    #   # syncProfileFromProvider: ['saml']
+    #   # syncProfileAttributes: ['email']
+    #   autoLinkSamlUser: true
+    #   providers:
+    #     - secret: omniauth-saml
+    #     # - configmapRef: 
+    #     #     name: omniauth-saml-cm
 
 
 certmanager-issuer:
