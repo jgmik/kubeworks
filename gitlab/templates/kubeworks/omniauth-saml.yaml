@@ -14,7 +14,7 @@ stringData:
     admin_groups: ['gitlab.softworks.co.kr:admin']
     args:
       assertion_consumer_service_url: 'https://k-gitlab.softworks.co.kr:31098/users/auth/saml/callback'
-      idp_cert_fingerprint: 'EE:C4:CB:CF:9F:C4:58:F6:1F:D7:1F:41:FF:3A:A3:12:18:B3:07:30:F9:F6:76:FB:8E:DE:06:3E:8F:3B:D6:7B'
+      idp_cert_fingerprint: 'D2:6C:90:9C:DE:86:63:F1:42:17:EF:E4:1B:35:28:A7:0A:AB:3D:CE'
       idp_sso_target_url: 'http://k-keycloakadm.softworks.co.kr:31370/realms/kubeworks/protocol/saml/clients/gitlab'
       allowed_clock_drift: 5
       issuer: 'gitlab'
