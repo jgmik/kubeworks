@@ -58,7 +58,8 @@ global:
       # syncProfileAttributes: ['email']
       autoLinkSamlUser: true
       providers:
-        - secret: omniauth-saml
+        # - secret: omniauth-saml
+        - configmap: omniauth-saml-cm
 
 
 certmanager-issuer:
