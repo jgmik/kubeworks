@@ -59,8 +59,8 @@ global:
       autoLinkSamlUser: true
       providers:
         # - secret: omniauth-saml
-        - configmap: 
-          name: omniauth-saml-cm
+        - configmapRef: 
+            name: omniauth-saml-cm
 
 
 certmanager-issuer:
