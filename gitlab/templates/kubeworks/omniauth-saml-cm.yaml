@@ -3,7 +3,7 @@ kind: configmap
 metadata:
   name: omniauth-saml-cm
   namespace: gitlab
-stringData:
+data:
   provider: |
     name: 'saml'
     label: 'SAML'
