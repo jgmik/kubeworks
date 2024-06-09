@@ -51,11 +51,12 @@ global:
       #   - secret: gitlab-keycloak-oidc-secret
     omniauth:
       enabled: true
+      allowSingleSignOn: ['saml']
       autoSignInWithProvider: 'saml'
       blockAutoCreatedUsers: false
-      allowSingleSignOn: ['saml']
-      syncProfileFromProvider: ['saml']
-      syncProfileAttributes: ['email']
+      # syncProfileFromProvider: ['saml']
+      # syncProfileAttributes: ['email']
+      autoLinkSamlUser: true
       providers:
         - secret: omniauth-saml
 
