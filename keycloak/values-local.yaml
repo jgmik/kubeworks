@@ -20,7 +20,7 @@ ingress:
       secretName: keycloak-tls-secret
 
 adminIngress:
-  enabled: true
+  enabled: false
   ingressClassName: nginx
   hostname: k-keycloakadm.softworks.co.kr
   tls: true
