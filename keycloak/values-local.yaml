@@ -18,11 +18,12 @@ ingress:
     - hosts:
         - k-keycloak.softworks.co.kr
       secretName: keycloak-tls-secret
-      
+
 adminIngress:
-  enabled: false
+  enabled: true
   ingressClassName: nginx
   hostname: k-keycloakadm.softworks.co.kr
+  tls: true
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
