@@ -27,6 +27,10 @@ adminIngress:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+  extraTls:
+    - hosts:
+        - k-keycloakadm.softworks.co.kr
+      secretName: keycloakadm-tls-secret
 
 keycloak:
   extraEnv: |
