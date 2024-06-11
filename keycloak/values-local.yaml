@@ -2,7 +2,7 @@ global:
   storageClass: nfs-client
 
 auth:
-  adminUser: admin
+  adminUser: "admin"
   adminPassword: "admin1234"
   managementPassword: "admin1234"
 
@@ -10,7 +10,7 @@ ingress:
   enabled: true
   ingressClassName: nginx
   hostname: k-keycloak.softworks.co.kr
-  tls: true
+  tls: false
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
