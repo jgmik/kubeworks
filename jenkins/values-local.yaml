@@ -1,6 +1,6 @@
 controller:
   installPlugins:
-    - keycloak:2.3.0 
+    - keycloak:2.3.2
   javaOpts: "-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
   securityContext:
     runAsUser: 1000
