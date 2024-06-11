@@ -15,10 +15,10 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     # nginx.ingress.kubernetes.io/ssl-passthrough: "false"
-  extraTls:
-    - hosts:
-        - k-keycloak.softworks.co.kr
-      secretName: keycloak-tls-secret
+  # extraTls:
+  #   - hosts:
+  #       - k-keycloak.softworks.co.kr
+  #     secretName: keycloak-tls-secret
 
 adminIngress:
   enabled: false
