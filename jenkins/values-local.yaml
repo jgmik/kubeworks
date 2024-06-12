@@ -12,7 +12,7 @@ controller:
     runAsUser: 1000
     fsGroup: 1000
   JCasC:
-    securityRealm: |
+    securityRealm: |-
       oic:
         clientId: "jenkins"
         clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
