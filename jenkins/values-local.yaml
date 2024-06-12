@@ -10,22 +10,22 @@ controller:
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
-  JCasC:
-    configScripts:
-      security: |
-        jenkins:
-          securityRealm:
-            oidc:
-              clientId: "jenkins"
-              clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
-              wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
-              tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
-              authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
-              userInfoServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/userinfo"
-              logoutServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/logout"
-              defaultScopes: "openid profile email"
-              postLogoutRedirectUrl: "http://k-jenkins.softworks.co.kr:31370"
-              logoutFromOpenidProvider: true    
+  # JCasC:
+  #   configScripts:
+  #     security: |
+  #       jenkins:
+  #         securityRealm:
+  #           oidc:
+  #             clientId: "jenkins"
+  #             clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+  #             wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
+  #             tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
+  #             authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
+  #             userInfoServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/userinfo"
+  #             logoutServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/logout"
+  #             defaultScopes: "openid profile email"
+  #             postLogoutRedirectUrl: "http://k-jenkins.softworks.co.kr:31370"
+  #             logoutFromOpenidProvider: true    
   # JCasC:
   #   configScripts:
   #     security: |
