@@ -7,6 +7,9 @@ controller:
   #   # - oauth-credentials:latest    
   #   - oic-auth:latest
   javaOpts: "-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
+  unclassified:
+    location:
+      url: "http://k-jenkins.softworks.co.kr:31370"
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
