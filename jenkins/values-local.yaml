@@ -12,6 +12,7 @@ controller:
     runAsUser: 1000
     fsGroup: 1000
   JCasC:
+    defaultConfig: false
     configScripts:
       zzzcustom: |-
         jenkins:
