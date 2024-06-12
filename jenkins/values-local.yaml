@@ -5,6 +5,43 @@ controller:
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
+  JCasC:
+    configScripts:
+      security: |
+        jenkins:
+          authorizationStrategy:
+            loggedInUsersCanDoAnything:
+              allowAnonymousRead: false
+          securityRealm:
+            keycloak:
+              clientId: "jenkins"
+              clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+              serverUrl: "http://k-keycloak.softworks.co.kr:31370"
+              realm: "kubeworks"
+              tokenUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
+              userInfoUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/userinfo"
+              loginUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
+              logoutUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/logout"
+              disableSslVerification: true
+              roles:
+                - "admin"
+                - "user"
+  # JCasC:
+  #   enabled: true
+  #   configScripts:
+  #     keycloak: |
+  #       jenkins:
+  #         securityRealm:
+  #           keycloak:
+  #             realm: "kubeworks"
+  #             authServerUrl: "https://your-keycloak-server/auth"
+  #             adminCredentialsId: "keycloak-admin"
+  #             clientId: "your-client-id"
+  #             clientSecret: "your-client-secret"
+  #             disableSslVerification: false
+  #         authorizationStrategy:
+  #           loggedInUsersCanDoAnything:
+  #             allowAnonymousRead: false    
   # JCasC:
   #   configScripts:
   #     customAgent: |
