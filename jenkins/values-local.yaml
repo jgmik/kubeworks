@@ -6,7 +6,7 @@ controller:
     # - configuration-as-code:latest
     # - oidc-plugin:latest
     # - oauth-credentials:latest    
-    - oidc:latest
+    - oic-auth:latest
   javaOpts: "-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
   securityContext:
     runAsUser: 1000
