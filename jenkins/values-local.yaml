@@ -11,49 +11,14 @@ controller:
     configScripts:
       security: |
         jenkins:
-          authorizationStrategy:
-            loggedInUsersCanDoAnything:
-              allowAnonymousRead: false
           securityRealm:
             keycloak:
-              clientId: "jenkins"
-              clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"              
-              serverUrl: "http://k-keycloak.softworks.co.kr:31370"
               realm: "kubeworks"
-              tokenUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
-              userInfoUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/userinfo"
-              loginUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
-              logoutUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/logout"
-              disableSslVerification: true
-              json:
-                realm: "kubeworks"
-                auth-server-url: "http://k-keycloak.softworks.co.kr:31370/"
-                ssl-required: "none"
-                resource: "jenkins"
-                credentials:
-                  secret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
-                confidential-port: 0
-              roles:
-                - "admin"
-                - "user"                
-  env:
-    - name: KEYCLOAK_JSON
-      value: /var/run/secrets/keycloak/keycloak.json                
-    # - name: KEYCLOAK_CLIENT_SECRET
-    #   valueFrom:
-    #     secretKeyRef:
-    #       name: keycloak-client-secret
-    #       key: clientSecret
-  volumes:
-    - name: keycloak-config-volume
-      configMap:
-        name: keycloak-config
+              authServerUrl: "http://k-keycloak.softworks.co.kr:31370/"
+              clientId: "jenkins"
+              clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+              disableSslVerification: true        
 
-  volumeMounts:
-    - name: keycloak-config-volume
-      mountPath: /var/run/secrets/keycloak
-              # clientSecret: "${KEYCLOAK_CLIENT_SECRET}"              
-              # clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
   # JCasC:
   #   enabled: true
   #   configScripts:
