@@ -17,7 +17,7 @@ controller:
           securityRealm:
             keycloak:
               clientId: "jenkins"
-              clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+              clientSecret: "${KEYCLOAK_CLIENT_SECRET}"              
               serverUrl: "http://k-keycloak.softworks.co.kr:31370"
               realm: "kubeworks"
               tokenUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
@@ -27,10 +27,15 @@ controller:
               disableSslVerification: true
               roles:
                 - "admin"
-                - "user"
+                - "user"                
   env:
     - name: KEYCLOAK_JSON
       value: /var/run/secrets/keycloak/keycloak.json                
+    - name: KEYCLOAK_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: keycloak-client-secret
+          key: clientSecret
   volumes:
     - name: keycloak-config-volume
       configMap:
@@ -39,6 +44,7 @@ controller:
   volumeMounts:
     - name: keycloak-config-volume
       mountPath: /var/run/secrets/keycloak
+              # clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
   # JCasC:
   #   enabled: true
   #   configScripts:
