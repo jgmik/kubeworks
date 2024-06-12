@@ -20,7 +20,7 @@ controller:
         wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
         tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
         authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
-        defaultScopes: "openid profile email"
+        scopes: "openid profile email"
         disableSslVerification: false
         endSessionEndpoint: "http://k-keycloak.softworks.co.kr:31370/realms/home/protocol/openid-connect/logout"
         escapeHatchEnabled: false
