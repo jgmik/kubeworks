@@ -3,9 +3,16 @@ controller:
     # - kubernetes:latest  
     # - configuration-as-code:latest
     # - keycloak:2.3.2
+    # - configuration-as-code:latest
+    # - oidc-plugin:latest
+    # - oauth-credentials:latest    
     - configuration-as-code:latest
     - oidc-plugin:latest
-    - oauth-credentials:latest    
+    - oauth-credentials:latest
+    - token-macro:latest
+    - jackson2-api:latest
+    - okhttp-api:latest
+    - bouncycastle-api:latest
   javaOpts: "-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
   securityContext:
     runAsUser: 1000
