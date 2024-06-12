@@ -1,8 +1,11 @@
 controller:
   installPlugins:
-    - kubernetes:latest  
+    # - kubernetes:latest  
+    # - configuration-as-code:latest
+    # - keycloak:2.3.2
     - configuration-as-code:latest
-    - keycloak:2.3.2
+    - oidc-plugin:latest
+    - oauth-credentials:latest    
   javaOpts: "-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
   securityContext:
     runAsUser: 1000
@@ -12,12 +15,28 @@ controller:
       security: |
         jenkins:
           securityRealm:
-            keycloak:
-              realm: "kubeworks"
-              authServerUrl: "http://k-keycloak.softworks.co.kr:31370/"
+            oidc:
               clientId: "jenkins"
               clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
-              disableSslVerification: true        
+              wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
+              tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
+              authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
+              userInfoServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/userinfo"
+              logoutServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/logout"
+              defaultScopes: "openid profile email"
+              postLogoutRedirectUrl: "http://k-jenkins.softworks.co.kr:31370"
+              logoutFromOpenidProvider: true    
+  # JCasC:
+  #   configScripts:
+  #     security: |
+  #       jenkins:
+  #         securityRealm:
+  #           keycloak:
+  #             realm: "kubeworks"
+  #             authServerUrl: "http://k-keycloak.softworks.co.kr:31370/"
+  #             clientId: "jenkins"
+  #             clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+  #             disableSslVerification: true        
 
   # JCasC:
   #   enabled: true
