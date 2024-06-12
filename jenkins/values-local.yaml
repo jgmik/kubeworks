@@ -28,6 +28,17 @@ controller:
               roles:
                 - "admin"
                 - "user"
+  env:
+    - name: KEYCLOAK_JSON
+      value: /var/run/secrets/keycloak/keycloak.json                
+  volumes:
+    - name: keycloak-config-volume
+      configMap:
+        name: keycloak-config
+
+  volumeMounts:
+    - name: keycloak-config-volume
+      mountPath: /var/run/secrets/keycloak
   # JCasC:
   #   enabled: true
   #   configScripts:
