@@ -3,7 +3,7 @@ controller:
     # - kubernetes:latest  
     # - configuration-as-code:latest
     # - keycloak:2.3.2
-    # - configuration-as-code:latest
+    - configuration-as-code:latest
     # - oidc-plugin:latest
     # - oauth-credentials:latest    
     - oic-auth:latest
