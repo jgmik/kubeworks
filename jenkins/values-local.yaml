@@ -11,9 +11,22 @@ controller:
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
-  # JCasC:
-  #   configScripts:
-  #     security: |
+  JCasC:
+    securityRealm: |
+      oic:
+        clientId: "jenkins"
+        clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+        wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
+        tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
+        authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
+        defaultScopes: "openid profile email"
+        disableSslVerification: false
+        endSessionEndpoint: "http://k-keycloak.softworks.co.kr:31370/realms/home/protocol/openid-connect/logout"
+        escapeHatchEnabled: false
+        logoutFromOpenidProvider: true
+        userNameField: "preferred_username"
+        emailFieldName: "email"
+        groupsFieldName: "groups"
   #       jenkins:
   #         securityRealm:
   #           oidc:
