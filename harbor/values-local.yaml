@@ -12,17 +12,40 @@ expose:
     tls: []
 harborAdminPassword: "admin1234"
 
-oidc:
-  enabled: true
-  issuer: "https://k-keycloak.softworks.co.kr:31089/realms/kubeworks"
-  clientId: "harbor"
-  clientSecret: "j6pwzWswgtjdbzLSqalk6pipAQW8cCcr"
-  scope: "openid,profile,email"
-  verifyCert: true
-  autoOnboard: true
-  groupsClaim: "groups"
-  adminGroup: "harbor-admins"
-  userClaim: "preferred_username"
+core:
+  env:
+    - name: "EXT_ENDPOINT"
+      value: "https://k-harbor.softworks.co.kr"
+    - name: "OIDC_PROVIDER_URL"
+      value: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks"
+    - name: "OIDC_CLIENT_ID"
+      value: "harbor"
+    - name: "OIDC_CLIENT_SECRET"
+      value: "j6pwzWswgtjdbzLSqalk6pipAQW8cCcr"
+    - name: "OIDC_SCOPE"
+      value: "openid,profile,email"
+    - name: "OIDC_VERIFY_CERT"
+      value: "true"
+    - name: "OIDC_AUTO_ONBOARD"
+      value: "true"
+    - name: "OIDC_GROUPS_CLAIM"
+      value: "groups"
+    - name: "OIDC_ADMIN_GROUP"
+      value: "harbor-admins"
+    - name: "OIDC_USER_CLAIM"
+      value: "preferred_username"
+
+# oidc:
+#   enabled: true
+#   issuer: "https://k-keycloak.softworks.co.kr:31089/realms/kubeworks"
+#   clientId: "harbor"
+#   clientSecret: "j6pwzWswgtjdbzLSqalk6pipAQW8cCcr"
+#   scope: "openid,profile,email"
+#   verifyCert: true
+#   autoOnboard: true
+#   groupsClaim: "groups"
+#   adminGroup: "harbor-admins"
+#   userClaim: "preferred_username"
 
 persistence:
   persistentVolumeClaim:
