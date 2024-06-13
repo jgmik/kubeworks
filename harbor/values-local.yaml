@@ -16,6 +16,8 @@ core:
   env:
     - name: "EXT_ENDPOINT"
       value: "https://k-harbor.softworks.co.kr"
+    - name: AUTH_MODE
+      value: "oidc_auth"      
     - name: "OIDC_PROVIDER_URL"
       value: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks"
     - name: "OIDC_CLIENT_ID"
