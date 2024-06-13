@@ -13,7 +13,8 @@ expose:
 harborAdminPassword: "admin1234"
 
 core:
-  env:
+  # env:
+  extraEnvVars:
     - name: "EXT_ENDPOINT"
       value: "https://k-harbor.softworks.co.kr"
     - name: AUTH_MODE
