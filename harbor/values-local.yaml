@@ -12,6 +12,18 @@ expose:
     tls: []
 harborAdminPassword: "admin1234"
 
+oidc:
+  enabled: true
+  issuer: "https://k-keycloak.softworks.co.kr:31089/realms/kubeworks"
+  clientId: "harbor"
+  clientSecret: "j6pwzWswgtjdbzLSqalk6pipAQW8cCcr"
+  scope: "openid,profile,email"
+  verifyCert: true
+  autoOnboard: true
+  groupsClaim: "groups"
+  adminGroup: "harbor-admins"
+  userClaim: "preferred_username"
+
 persistence:
   persistentVolumeClaim:
     registry:
