@@ -34,18 +34,20 @@ core:
       value: "harbor-admins"
     - name: "OIDC_USER_CLAIM"
       value: "preferred_username"
-
-# oidc:
-#   enabled: true
-#   issuer: "https://k-keycloak.softworks.co.kr:31089/realms/kubeworks"
-#   clientId: "harbor"
-#   clientSecret: "j6pwzWswgtjdbzLSqalk6pipAQW8cCcr"
-#   scope: "openid,profile,email"
-#   verifyCert: true
-#   autoOnboard: true
-#   groupsClaim: "groups"
-#   adminGroup: "harbor-admins"
-#   userClaim: "preferred_username"
+harbor:
+  auth:
+    oidc:
+      enabled: true
+      # issuer: "https://k-keycloak.softworks.co.kr:31089/realms/kubeworks"
+      providerUrl: "https://k-keycloak.softworks.co.kr:31089/realms/kubeworks"
+      clientId: "harbor"
+      clientSecret: "j6pwzWswgtjdbzLSqalk6pipAQW8cCcr"
+      scope: "openid,profile,email"
+      verifyCert: true
+      autoOnboard: true
+      groupsClaim: "groups"
+      adminGroup: "harbor-admins"
+      userClaim: "preferred_username"
 
 persistence:
   persistentVolumeClaim:
