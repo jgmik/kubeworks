@@ -33,14 +33,20 @@ controller:
     authorizationStrategy: |-
       roleBased:
         roles:
-
-  # global:
-  # - assignments:
-  #   - "guillaume_lecroc"
-  #   name: "admin"
-  #   pattern: ".*"
-  #   permissions:
-  #   - "Overall/Administer"
+          global:
+            - name: "admin"
+              description: "Jenkins administrators"
+              permissions:
+                - "Overall/Administer"
+              entries:
+                - user: "admin"
+            - name: "readonly"
+              description: "Read-only users"
+              permissions:
+                - "Overall/Read"
+                - "Job/Read"
+              entries:
+                - user: "authenticated"
 
   #       jenkins:
   #         securityRealm:
