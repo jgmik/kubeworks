@@ -31,10 +31,15 @@ controller:
         emailFieldName: "email"
         groupsFieldName: "groups"
     authorizationStrategy: |-
-      globalMatrix:
-        permissions:
-          - "Overall/Administer:firstname.lastname@example.com"
-          - "Overall/Read:authenticated"
+      roleBased:
+        roles:
+          global:
+          - assignments:
+            - "guillaume_lecroc"
+            name: "admin"
+            pattern: ".*"
+            permissions:
+            - "Overall/Administer"
   #       jenkins:
   #         securityRealm:
   #           oidc:
