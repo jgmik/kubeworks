@@ -30,7 +30,11 @@ controller:
         userNameField: "preferred_username"
         emailFieldName: "email"
         groupsFieldName: "groups"
-
+    authorizationStrategy: |-
+      globalMatrix:
+        permissions:
+          - "Overall/Administer:firstname.lastname@example.com"
+          - "Overall/Read:authenticated"
   #       jenkins:
   #         securityRealm:
   #           oidc:
