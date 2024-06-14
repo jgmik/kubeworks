@@ -33,13 +33,15 @@ controller:
     authorizationStrategy: |-
       roleBased:
         roles:
-          global:
-          - assignments:
-            - "guillaume_lecroc"
-            name: "admin"
-            pattern: ".*"
-            permissions:
-            - "Overall/Administer"
+
+  # global:
+  # - assignments:
+  #   - "guillaume_lecroc"
+  #   name: "admin"
+  #   pattern: ".*"
+  #   permissions:
+  #   - "Overall/Administer"
+
   #       jenkins:
   #         securityRealm:
   #           oidc:
