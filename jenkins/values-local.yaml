@@ -40,6 +40,13 @@ controller:
                 - "Overall/Administer"
               entries:
                 - group: "jenkins-admin"
+            - name: "user"
+              description: "jenkins users"
+              permissions:
+                - "Overall/Read"
+                - "Job/Read"
+              entries:
+                - group: "jenkins-user"
             - name: "readonly"
               description: "Read-only users"
               permissions:
@@ -47,7 +54,6 @@ controller:
                 - "Job/Read"
               entries:
                 - user: "authenticated"
-
   #       jenkins:
   #         securityRealm:
   #           oidc:
