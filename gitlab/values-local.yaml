@@ -52,7 +52,7 @@ global:
     omniauth:
       enabled: true
       allowSingleSignOn: ['saml']
-      autoSignInWithProvider: 'saml'
+      # autoSignInWithProvider: 'saml'
       blockAutoCreatedUsers: false
       # syncProfileFromProvider: ['saml']
       # syncProfileAttributes: ['email']
