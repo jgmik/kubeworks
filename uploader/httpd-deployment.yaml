@@ -17,10 +17,10 @@ spec:
       containers:
       - name: httpd
 #        image: node:18.13.0-alpine
-        image: kimjonggu/xtermjs:0.01
+        image: kimjonggu/uploader:0.0.1
         ports:
         - name: http
           containerPort: 3000
-        command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
+        # command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
       # imagePullSecrets:
       # - name: regcred
