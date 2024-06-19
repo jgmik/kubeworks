@@ -20,7 +20,7 @@ spec:
         image: kimjonggu/uploader:0.0.1
         ports:
         - name: http
-          containerPort: 3000
+          containerPort: 80
         # command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
       # imagePullSecrets:
       # - name: regcred
