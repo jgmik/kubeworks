@@ -18,6 +18,7 @@ spec:
       - name: httpd
 #        image: node:18.13.0-alpine
         image: kimjonggu/uploader:0.0.1
+        imagePullPolicy: Always
         ports:
         - name: http
           containerPort: 8080
