@@ -79,6 +79,6 @@ nginx-ingress:
 prometheus:
   install: false  #on-prem
 gitlab-runner:
-  install: false  #on-prem
+  install: true  #on-prem
 upgradeCheck:
   enabled: false
