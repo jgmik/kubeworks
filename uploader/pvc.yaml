@@ -7,5 +7,5 @@ spec:
     - ReadWriteOnce  # 한 번에 한 노드에서 읽기/쓰기 가능
   resources:
     requests:
-      storage: 500Gi  # 요청하는 스토리지 크기
+      storage: 100Gi  # 요청하는 스토리지 크기
   storageClassName: nfs-client  # 사용할 StorageClass 이름
