@@ -24,7 +24,7 @@ spec:
           containerPort: 8080
         volumeMounts:
         - name: uploader-pvc
-          mountPath: /usr/share/nginx/html
+          mountPath: /upload
         # command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
       # imagePullSecrets:
       # - name: regcred
