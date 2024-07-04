@@ -25,3 +25,7 @@ spec:
         # command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
       # imagePullSecrets:
       # - name: regcred
+      volumes:
+      - name: data-volume  # 볼륨 이름
+        persistentVolumeClaim:
+          claimName: uploader-pvc  # PersistentVolumeClaim 이름
