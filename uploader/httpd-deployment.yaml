@@ -23,12 +23,12 @@ spec:
         - name: http
           containerPort: 8080
         volumeMounts:
-        - name: uploader-pvc
+        - name: uploader-tmp-pvc
           mountPath: /upload/temp
         # command: ["/bin/sh","-ec","while :; do echo 'Hello World'; sleep 5; done"]
       # imagePullSecrets:
       # - name: regcred
       volumes:
-      - name: uploader-pvc  # 볼륨 이름
+      - name: uploader-tmp-pvc  # 볼륨 이름
         persistentVolumeClaim:
-          claimName: uploader-pvc  # PersistentVolumeClaim 이름
+          claimName: uploader-tmp-pvc  # PersistentVolumeClaim 이름
