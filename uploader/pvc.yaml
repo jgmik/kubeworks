@@ -8,4 +8,4 @@ spec:
   resources:
     requests:
       storage: 500Gi  # 요청하는 스토리지 크기
-  storageClassName: nfc-client  # 사용할 StorageClass 이름
+  storageClassName: nfs-client  # 사용할 StorageClass 이름
