@@ -1,7 +1,7 @@
 phpldapadmin:
   enabled: true
   ingress:
-    enabled: true
+    enabled: false
     annotations: {}
     path: /
     ## Ingress Host
