@@ -1,0 +1,11 @@
+phpldapadmin:
+  enabled: true
+  ingress:
+    enabled: true
+    annotations: {}
+    path: /
+    ## Ingress Host
+    hosts:
+    - phpldapadmin.local
+  env:
+    PHPLDAPADMIN_LDAP_HOSTS: openldap.openldap
