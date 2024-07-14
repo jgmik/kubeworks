@@ -1,0 +1,4 @@
+gitlabUrl: https://k-gitlab.softworks.co.kr:31089
+rbac:
+  create: true
+runnerToken: "GR134894189BkyLaJGW4y3t61nsfF"
