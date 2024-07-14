@@ -1,2 +1,5 @@
-gitlabUrl: https://k-gitlab.softworks.co.kr:31089
-runnerToken: "glrt-9psWaHLZzys22_9eHsvA"
+# gitlabUrl: https://k-gitlab.softworks.co.kr:31089
+gitlabUrl: https://gitlab.com
+# runnerToken: "glrt-9psWaHLZzys22_9eHsvA"
+runnerToken: "glrt-3cxRC8cKBTD16bmc7u7M"
+
