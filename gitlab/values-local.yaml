@@ -13,6 +13,10 @@ global:
     registry:
       name: k-registry.softworks.co.kr
       https: true
+  gitlab:
+    externalUrl: "https://k-gitlab.softworks.co.kr:31089/"
+    gitlabShell:
+      sshPort: 2222
   ingress:
     configureCertmanager: false #on-prem
     provider: nginx #on-prem
