@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubeworks-app
+  namespace: argo
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: kubeworks-pjt
+  source:
+    repoURL: https://github.com/jgmik/kubeworks.git
+    targetRevision: HEAD
+    path: sample-helm-1
+    helm:
+      valueFiles:
+        - https://github.com/jgmik/kubeworks/blob/main/kubeworks-app-value/values-local.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kubeworks
+
+  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#      allowEmpty: false
+    syncOptions:
+    - Validate=false
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
