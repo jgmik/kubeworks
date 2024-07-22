@@ -13,7 +13,7 @@ spec:
     path: sample-helm-1
     helm:
       valueFiles:
-        - https://github.com/jgmik/kubeworks/blob/main/kubeworks-app-value/values-local.yaml
+        - https://github.com/jgmik/kubeworks-app-value/values-local.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kubeworks
