@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: httpd
+  name: demo-fe
   labels:
-    app: "httpd"
+    app: "demo-fe"
 spec:
   type: NodePort
   ports:
@@ -13,4 +13,4 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    app: "httpd"
+    app: "demo-fe"
