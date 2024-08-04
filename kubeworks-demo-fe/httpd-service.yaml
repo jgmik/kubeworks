@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-fe
+  name: demofe
   labels:
-    app: "demo-fe"
+    app: "demofe"
 spec:
   type: NodePort
   ports:
@@ -13,4 +13,4 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    app: "demo-fe"
+    app: "demofe"
