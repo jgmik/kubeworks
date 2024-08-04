@@ -15,7 +15,7 @@ spec:
         app: "demo-fe"
     spec:
       containers:
-      - name: demo-fe
+      - name: "demo-fe"
 #        image: node:18.13.0-alpine
         image: kimjonggu/demo_fe
         imagePullPolicy: Always
