@@ -8,14 +8,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "httpd"
+      app: "demo-fe"
   template:
     metadata:
       labels:
-        app: "httpd"
+        app: "demo-fe"
     spec:
       containers:
-      - name: httpd
+      - name: demo-fe
 #        image: node:18.13.0-alpine
         image: kimjonggu/demo_fe
         imagePullPolicy: Always
