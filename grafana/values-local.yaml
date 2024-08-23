@@ -15,7 +15,7 @@ datasources:
     datasources:
       - name: Prometheus
         type: prometheus
-        url: http://prometheus-server.prom.svc.cluster.local
+        url: http://prometheus-app-server.prometheus.svc.cluster.local
         access: proxy
         isDefault: true
 
