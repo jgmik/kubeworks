@@ -14,7 +14,9 @@ server:
   service:
     nodePort: 32080
     type: NodePort
-
+  extraEnv:
+    - name: TZ
+      value: Asia/Seoul
 alertmanager:
   enabled: true
 
