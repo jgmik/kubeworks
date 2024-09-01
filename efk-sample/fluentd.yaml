@@ -80,10 +80,10 @@ spec:
           value: "kube-container-logs"
         - name: FLUENT_ELASTICSEARCH_LOGSTASH_DATAFORMAT
           value: "%Y-%m-%d"
-        - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
-          value: /var/log/containers/fluent*
-        - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
-          value: /^(?<time>.+) (?<stream>stdout|stderr)( (?<logtag>.))? (?<log>.*)$/          
+        # - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
+        #   value: /var/log/containers/fluent*
+        # - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+        #   value: /^(?<time>.+) (?<stream>stdout|stderr)( (?<logtag>.))? (?<log>.*)$/          
         - name: K8S_NODE_NAME
           valueFrom:
             fieldRef:
