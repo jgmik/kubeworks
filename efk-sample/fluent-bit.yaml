@@ -111,10 +111,15 @@ data:
 
   output-elasticsearch.conf: |
     [OUTPUT]
-        Name          forward
-        Match         *
-        Host          fluentd-app-aggregator.fluentd
-        Port          24224
+        Name            es
+        Match           *
+        Host            ${FLUENT_ELASTICSEARCH_HOST}
+        Port            ${FLUENT_ELASTICSEARCH_PORT}
+        Logstash_Format On
+        Replace_Dots    On
+        Retry_Limit     False
+        Suppress_Type_Name  On
+  
   parsers.conf: |
     [PARSER]
         Name   apache
