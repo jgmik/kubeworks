@@ -90,24 +90,24 @@ data:
         Add_prefix          Kube.
     
     [FILTER]
-      Name                modify
-      Match               kube.*
-      Remove              Kube.container_hash
-      Remove              Kube.docker_id
-      Remove              Kube.pod_id
-      Remove              Kube.namespace_name
-      Remove              Kube.pod_name
-      Remove              Kube.host
-      Remove              stream
-      Remove              logtag
+        Name                modify
+        Match               kube.*
+        Remove              Kube.container_hash
+        Remove              Kube.docker_id
+        Remove              Kube.pod_id
+        Remove              Kube.namespace_name
+        Remove              Kube.pod_name
+        Remove              Kube.host
+        Remove              stream
+        Remove              logtag
   
     [FILTER]
-      Name                nest
-      Match               kube.*
-      Operation           nest
-      Wildcard            Kube.*
-      Nested_under        kubernetes
-      Remove_prefix       Kube.
+        Name                nest
+        Match               kube.*
+        Operation           nest
+        Wildcard            Kube.*
+        Nested_under        kubernetes
+        Remove_prefix       Kube.
 
   output-elasticsearch.conf: |
     [OUTPUT]
