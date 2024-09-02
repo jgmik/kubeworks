@@ -1,0 +1,56 @@
+image:
+  ## repository: fluent/fluentd
+  ## tag: v1.14.6 # 원하는 Fluentd 버전을 지정합니다. 최신 버전을 사용하는 것이 좋습니다.
+  ## pullPolicy: IfNotPresent
+
+# Fluentd의 기본 설정 파일 (configMap을 통해 제공)
+## config:
+  ## configMapName: "fluentd-config" # ConfigMap 이름을 지정합니다. 실제 환경에 맞게 설정하세요.
+
+# 로그 수집에 사용될 입력 및 출력 플러그인 설정
+input:
+  type: tail
+  path: "/var/log/containers/*.log" # 로그 수집 경로 설정
+  parser: json # 로그 형식에 따라 parser를 설정 (예: json, regex 등)
+  tag: kube.*
+
+output:
+  # type: forward
+  type: elasticsearch
+  host: elasticsearch-svc.elastic # Elasticsearch, Loki, Kafka 등 출력 대상의 호스트 이름 또는 IP를 설정합니다.
+  port: 9200 # 출력 대상의 포트를 설정합니다.
+  index_name: "fluentd-logs" # 고정된 인덱스명을 지정합니다.
+  index_name_key: "log_index" # 로그 레코드의 필드 값을 인덱스명으로 사용하려면 이 옵션을 사용합니다.
+
+# 자원 요청 및 제한 설정 (필수값은 아니지만, 자원을 적절히 설정하는 것이 권장됩니다.)
+resources:
+  requests:
+    memory: "500Mi"
+    cpu: "100m"
+  limits:
+    memory: "1Gi"
+    cpu: "500m"
+
+# Fluentd 로그 레벨 설정
+logLevel: "info" # 로그 레벨을 설정합니다 (예: debug, info, warn, error 등).
+
+# Kubernetes 관련 설정
+rbac:
+  create: true # RBAC가 활성화된 Kubernetes 클러스터에서는 true로 설정
+
+serviceAccount:
+  create: true
+  name: "fluentd"
+
+# DaemonSet을 사용하여 모든 노드에 Fluentd를 배포할지 여부
+daemonset:
+  enabled: true
+
+# Tolerations 설정 (노드의 특정 조건에 배포할 때 사용)
+tolerations: []
+
+# Node Selector 설정 (특정 노드에만 배포할 때 사용)
+nodeSelector: {}
+
+# Affinity 설정 (애플리케이션 배치를 제어할 때 사용)
+affinity: {}
