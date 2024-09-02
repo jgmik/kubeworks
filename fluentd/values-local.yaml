@@ -44,7 +44,7 @@ serviceAccount:
 
 # DaemonSet을 사용하여 모든 노드에 Fluentd를 배포할지 여부
 daemonset:
-  enabled: true
+  enabled: false
 
 # Tolerations 설정 (노드의 특정 조건에 배포할 때 사용)
 tolerations: []
