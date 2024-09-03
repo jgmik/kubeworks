@@ -85,6 +85,9 @@ spec:
       containers:
         - name: fluent-bit
           image: fluent/fluent-bit:2.1.6
+          env:
+            - name: FD_LIMIT
+              value: "65536"  # 파일 디스크립터 제한을 늘림          
           volumeMounts:
             - name: varlog
               mountPath: /var/log
