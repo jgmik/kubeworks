@@ -168,39 +168,46 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: fluent-bit
-  namespace: logging
+  namespace: efk
   labels:
-    k8s-app: fluent-bit
+    k8s-app: fluent-bit-logging
+    version: v1
+    kubernetes.io/cluster-service: "true"
 spec:
   selector:
     matchLabels:
-      k8s-app: fluent-bit
+      k8s-app: fluent-bit-logging
   template:
     metadata:
       labels:
-        k8s-app: fluent-bit
+        k8s-app: fluent-bit-logging
+        version: v1
+        kubernetes.io/cluster-service: "true"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "2020"
+        prometheus.io/path: /api/v1/metrics/prometheus
     spec:
-      serviceAccountName: fluent-bit
       containers:
         - name: fluent-bit
-          image: fluent/fluent-bit:latest # fluent/fluent-bit:2.1.6
+          image: fluent/fluent-bit:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 2020
           env:
-            - name: FD_LIMIT
-              value: "262144"  # 파일 디스크립터 제한을 늘림 65536           
+            - name: FLUENT_ELASTICSEARCH_HOST
+              value: "elasticsearch-svc.elastic"
+            - name: FLUENT_ELASTICSEARCH_PORT
+              value: "9200"
           volumeMounts:
             - name: varlog
               mountPath: /var/log
             - name: varlibdockercontainers
               mountPath: /var/lib/docker/containers
-            - name: config
-              mountPath: /fluent-bit/etc
-          resources:
-            limits:
-              memory: 512Mi
-              cpu: 1000m
-            requests:
-              memory: 256Mi
-              cpu: 500m
+              readOnly: true
+            - name: fluent-bit-config
+              mountPath: /fluent-bit/etc/
+      terminationGracePeriodSeconds: 10
       volumes:
         - name: varlog
           hostPath:
@@ -208,6 +215,15 @@ spec:
         - name: varlibdockercontainers
           hostPath:
             path: /var/lib/docker/containers
-        - name: config
+        - name: fluent-bit-config
           configMap:
             name: fluent-bit-config
+      serviceAccountName: fluent-bit
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
+        - operator: "Exists"
+          effect: "NoExecute"
+        - operator: "Exists"
+          effect: "NoSchedule"
