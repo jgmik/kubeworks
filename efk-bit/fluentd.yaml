@@ -15,7 +15,7 @@ data:
       host elasticsearch-svc.logging.svc.cluster.local
       port 9200
       logstash_format true
-      logstash_prefix fluentd
+      logstash_prefix fluentd-bit
       include_tag_key true
       type_name access_log
     </match>
