@@ -86,7 +86,7 @@ spec:
       serviceAccountName: fluent-bit
       containers:
         - name: fluent-bit
-          image: fluent/fluent-bit:2.1.6
+          image: fluent/fluent-bit:latest # fluent/fluent-bit:2.1.6
           env:
             - name: FD_LIMIT
               value: "262144"  # 파일 디스크립터 제한을 늘림 65536           
