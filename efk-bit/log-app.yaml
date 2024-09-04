@@ -24,7 +24,7 @@ spec:
   selector:
     matchLabels:
       app: flask-example
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
