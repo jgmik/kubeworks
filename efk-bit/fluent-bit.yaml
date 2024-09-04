@@ -85,7 +85,6 @@ data:
         Remove              Kube.namespace_name
         Remove              Kube.pod_name
         Remove              Kube.host
-        Remove              stream
         Remove              logtag
   
     [FILTER]
