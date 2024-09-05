@@ -48,6 +48,7 @@ data:
         Path              /var/log/containers/*.log
         Parser            docker
         DB                /var/log/flb_kube.db
+        Exclude_Path      /var/log/containers/*fluent-bit*.log
         Mem_Buf_Limit     5MB
         Skip_Long_Lines   Off
         Refresh_Interval  10
@@ -61,6 +62,10 @@ data:
         Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token
         Kube_Tag_Prefix     kube.var.log.containers.
  
+    [FILTER]
+        Name        grep
+        Match       kube.*
+        Exclude     log  .*fluent-bit.*
 
   output-elasticsearch.conf: |
     [OUTPUT]
