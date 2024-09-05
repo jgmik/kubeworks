@@ -49,10 +49,12 @@ data:
         Parser            docker
         DB                /var/log/flb_kube.db
         Exclude_Path      /var/log/containers/*fluent-bit*.log
-        Mem_Buf_Limit     5MB
+        Mem_Buf_Limit     10MB
         Skip_Long_Lines   Off
         Refresh_Interval  10
-
+        Rotate_Wait       30
+        Ignore_Older      24h
+        
   filter-kubernetes.conf: |
     [FILTER]
         Name                kubernetes
