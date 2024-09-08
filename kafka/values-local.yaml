@@ -6,12 +6,12 @@
 #   persistence:
 #     existingClaim: "kafka-zoo-pvc"
     
-externalAccess:
-  enabled: true
-  controller:
-    service:
-      type: NodePort
-      nodePorts:
-        - 30001
-      useHostIPs: true
-      domain: "kube01.softworks.co.kr"
+# externalAccess:
+#   enabled: true
+#   controller:
+#     service:
+#       type: NodePort
+#       nodePorts:
+#         - 30001
+#       useHostIPs: true
+#       domain: "kube01.softworks.co.kr"
