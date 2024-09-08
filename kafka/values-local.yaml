@@ -15,3 +15,8 @@
 #         - 30001
 #       useHostIPs: true
 #       domain: "kube01.softworks.co.kr"
+
+service:
+  type: NodePort
+    nodePorts: 32092
+    client: ""
