@@ -9,9 +9,10 @@ zookeeper:
     
 externalAccess:
   enabled: true
-  service:
-    type: NodePort
-    nodePorts:
-      - 30001
-    useHostIPs: true
-    domain: "kube01.softworks.co.kr"
+  controller:
+    service:
+      type: NodePort
+      nodePorts:
+        - 30001
+      useHostIPs: true
+      domain: "kube01.softworks.co.kr"
