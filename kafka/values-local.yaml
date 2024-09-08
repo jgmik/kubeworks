@@ -1,11 +1,10 @@
-persistence:
-  enabled: true
-  existingClaim: "kafka-data-pvc"
+# persistence:
+#   enabled: true
+#   existingClaim: "kafka-data-pvc"
  
-zookeeper:
-  persistence:
-    existingClaim: "kafka-zoo-pvc"
-    
+# zookeeper:
+#   persistence:
+#     existingClaim: "kafka-zoo-pvc"
     
 externalAccess:
   enabled: true
