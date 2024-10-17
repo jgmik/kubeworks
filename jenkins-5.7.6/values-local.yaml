@@ -13,114 +13,44 @@ controller:
   securityContext:
     runAsUser: 1000
     fsGroup: 1000
-  JCasC:
-    defaultConfig: true  
-    securityRealm: |-
-      oic:
-        clientId: "jenkins"
-        clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
-        wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
-        tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
-        authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
-        scopes: "openid profile email"
-        disableSslVerification: false
-        endSessionEndpoint: "http://k-keycloak.softworks.co.kr:31370/realms/home/protocol/openid-connect/logout"
-        escapeHatchEnabled: false
-        logoutFromOpenidProvider: true
-        userNameField: "preferred_username"
-        emailFieldName: "email"
-        groupsFieldName: "groups"
-    authorizationStrategy: |-
-      roleBased:
-        roles:
-          global:
-            - name: "admin"
-              description: "Jenkins administrators"
-              permissions:
-                - "Overall/Administer"
-              entries:
-                - group: "jenkins-admin"
-            - name: "user"
-              description: "jenkins users"
-              permissions:
-                - "Overall/Read"
-                - "Job/Read"
-              entries:
-                - group: "jenkins-user"
-            - name: "readonly"
-              description: "Read-only users"
-              permissions:
-                - "Overall/Read"
-                - "Job/Read"
-              entries:
-                - user: "authenticated"
-  #       jenkins:
-  #         securityRealm:
-  #           oidc:
-  #             clientId: "jenkins"
-  #             clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
-  #             wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
-  #             tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
-  #             authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
-  #             userInfoServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/userinfo"
-  #             logoutServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/logout"
-  #             defaultScopes: "openid profile email"
-  #             postLogoutRedirectUrl: "http://k-jenkins.softworks.co.kr:31370"
-  #             logoutFromOpenidProvider: true    
   # JCasC:
-  #   configScripts:
-  #     security: |
-  #       jenkins:
-  #         securityRealm:
-  #           keycloak:
-  #             realm: "kubeworks"
-  #             authServerUrl: "http://k-keycloak.softworks.co.kr:31370/"
-  #             clientId: "jenkins"
-  #             clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
-  #             disableSslVerification: true        
-
-  # JCasC:
-  #   enabled: true
-  #   configScripts:
-  #     keycloak: |
-  #       jenkins:
-  #         securityRealm:
-  #           keycloak:
-  #             realm: "kubeworks"
-  #             authServerUrl: "https://your-keycloak-server/auth"
-  #             adminCredentialsId: "keycloak-admin"
-  #             clientId: "your-client-id"
-  #             clientSecret: "your-client-secret"
-  #             disableSslVerification: false
-  #         authorizationStrategy:
-  #           loggedInUsersCanDoAnything:
-  #             allowAnonymousRead: false    
-  # JCasC:
-  #   configScripts:
-  #     customAgent: |
-  #       jenkins:
-  #         clouds:
-  #           - kubernetes:
-  #               name: "kubernetes"
-  #               templates:
-  #                 - name: "jenkins-agent"
-  #                   label: "jenkins-agent"
-  #                   containers:
-  #                     - name: "jnlp"
-  #                       image: "jenkins/inbound-agent"
-  #                       args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
-  #                     - name: "busybox"
-  #                       image: "busybox"
-  #                       command: ["cat"]
-  #                       tty: true
-  #                   initContainers:
-  #                     - name: "init-permissions"
-  #                       image: "busybox"
-  #                       command: ['sh', '-c', 'chown -R jenkins:jenkins /home/jenkins/agent/workspace && chmod -R 755 /home/jenkins/agent/workspace']
-  #                       volumeMounts:
-  #                         - name: "workspace-volume"
-  #                           mountPath: "/home/jenkins/agent/workspace"
-  #                   volumes:
-  #                     - name: "workspace-volume"
-  #                       persistentVolumeClaim:
-  #                         claimName: "jenkins-workspace-pvc"
+  #   defaultConfig: true  
+  #   securityRealm: |-
+  #     oic:
+  #       clientId: "jenkins"
+  #       clientSecret: "3bZvxR0mn0TaSjn52eOit68a21cAjlyL"
+  #       wellKnownOpenIDConfigurationUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/.well-known/openid-configuration"
+  #       tokenServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/token"
+  #       authorizationServerUrl: "http://k-keycloak.softworks.co.kr:31370/realms/kubeworks/protocol/openid-connect/auth"
+  #       scopes: "openid profile email"
+  #       disableSslVerification: false
+  #       endSessionEndpoint: "http://k-keycloak.softworks.co.kr:31370/realms/home/protocol/openid-connect/logout"
+  #       escapeHatchEnabled: false
+  #       logoutFromOpenidProvider: true
+  #       userNameField: "preferred_username"
+  #       emailFieldName: "email"
+  #       groupsFieldName: "groups"
+  #   authorizationStrategy: |-
+  #     roleBased:
+  #       roles:
+  #         global:
+  #           - name: "admin"
+  #             description: "Jenkins administrators"
+  #             permissions:
+  #               - "Overall/Administer"
+  #             entries:
+  #               - group: "jenkins-admin"
+  #           - name: "user"
+  #             description: "jenkins users"
+  #             permissions:
+  #               - "Overall/Read"
+  #               - "Job/Read"
+  #             entries:
+  #               - group: "jenkins-user"
+  #           - name: "readonly"
+  #             description: "Read-only users"
+  #             permissions:
+  #               - "Overall/Read"
+  #               - "Job/Read"
+  #             entries:
+  #               - user: "authenticated"
