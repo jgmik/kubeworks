@@ -1,4 +1,14 @@
 global:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: team
+            operator: In
+            values:
+            - gitlab
+      # topologyKey: "kubernetes.io/hostname"
   edition: ce #on-prem
   hosts:
     domain: softworks.co.kr  #on-prem
