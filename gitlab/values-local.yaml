@@ -92,12 +92,12 @@ shared-secrets:
     value: gitlab
     effect: NoExecute
 
-upgradeCheck:
-  tolerations: 
-  - key: role
-    operator: Equal
-    value: gitlab
-    effect: NoExecute
+# upgradeCheck:
+#   tolerations: 
+#   - key: role
+#     operator: Equal
+#     value: gitlab
+#     effect: NoExecute
 
 certmanager:
   installCRDs: false  #on-prem
