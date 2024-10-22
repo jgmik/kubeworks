@@ -1,13 +1,13 @@
 global:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: team
-            operator: In
-            values:
-            - gitlab
+  # affinity:
+  #   nodeAffinity:
+  #     requiredDuringSchedulingIgnoredDuringExecution:
+  #       nodeSelectorTerms:
+  #       - matchExpressions:
+  #         - key: team
+  #           operator: In
+  #           values:
+  #           - gitlab
       # topologyKey: "kubernetes.io/hostname"
   edition: ce #on-prem
   hosts:
