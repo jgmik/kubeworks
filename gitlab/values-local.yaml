@@ -75,6 +75,13 @@ certmanager-issuer:
 #   image:
 #     tag: 
 
+shared-secrets:
+  tolerations: 
+  - key: role
+    operator: Equal
+    value: gitlab
+    effect: NoExecute
+    
 certmanager:
   installCRDs: false  #on-prem
   install: false
