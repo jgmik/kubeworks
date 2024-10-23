@@ -1,8 +1,15 @@
 global:
   antiAffinity: hard
   affinity:
-    podAntiAffinity:
-      topologyKey: "nodetype=public"
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: nodetype
+            operator: In
+            values:
+            - gitlab
+        topologyKey: "kubernetes.io/hostname"
   edition: ce #on-prem
   hosts:
     domain: softworks.co.kr  #on-prem
