@@ -2,7 +2,7 @@ global:
   antiAffinity: soft
   affinity:
     podAntiAffinity:
-      topologyKey: "nodetype/gitlab"
+      topologyKey: "nodetype/public"
   edition: ce #on-prem
   hosts:
     domain: softworks.co.kr  #on-prem
