@@ -9,16 +9,6 @@ global:
             values:
             - gitlab
       # topologyKey: "kubernetes.io/hostname"
-  webservice:
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-            - matchExpressions:
-                - key: team
-                  operator: In
-                  values:
-                    - gitlab
       podAntiAffinity: {}  # Anti-affinity 설정을 비워서 제거      
   edition: ce #on-prem
   hosts:
@@ -38,6 +28,16 @@ global:
     externalUrl: "https://k-gitlab.softworks.co.kr:31089/"
     gitlabShell:
       sshPort: 2222
+    webservice:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: team
+                    operator: In
+                    values:
+                      - gitlab      
   ingress:
     configureCertmanager: false #on-prem
     provider: nginx #on-prem
