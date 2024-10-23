@@ -2,7 +2,7 @@ global:
   antiAffinity: hard
   affinity:
     podAntiAffinity:
-      topologyKey: "nodetype/public"
+      topologyKey: "nodetype=public"
   edition: ce #on-prem
   hosts:
     domain: softworks.co.kr  #on-prem
