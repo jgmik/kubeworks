@@ -1,5 +1,5 @@
 global:
-  antiAffinity: soft
+  antiAffinity: hard
   affinity:
     podAntiAffinity:
       topologyKey: "nodetype/public"
