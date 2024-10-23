@@ -110,3 +110,15 @@ gitlab-runner:
   install: false  #on-prem
 upgradeCheck:
   enabled: false
+
+webservice:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: team
+                operator: In
+                values:
+                  - gitlab
+    podAntiAffinity: {}  # Anti-affinity 설정을 비워서 제거
