@@ -1,10 +1,10 @@
 global:
-  nodeAffinity: "hard"
-  affinity:
-    nodeAffinity:
-      key: "nodetype"
-      values:
-      - gitlab
+  # nodeAffinity: "hard"
+  # affinity:
+  #   nodeAffinity:
+  #     key: "nodetype"
+  #     values:
+  #     - gitlab
   edition: ce #on-prem
   hosts:
     domain: softworks.co.kr  #on-prem
@@ -107,4 +107,11 @@ gitlab-runner:
   install: false  #on-prem
 upgradeCheck:
   enabled: false
+gitlab:
+  webservice:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
 
