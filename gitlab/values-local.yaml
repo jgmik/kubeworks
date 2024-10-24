@@ -5,7 +5,7 @@ global:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: team
+          - key: nodetype
             operator: In
             values:
             - gitlab
