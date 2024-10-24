@@ -127,7 +127,7 @@ gitlab:
       operator: Equal
       value: gitlab
       effect: NoExecute
-        
+
     nodeAffinity: "hard"
     affinity:
       nodeAffinity:
@@ -144,11 +144,42 @@ gitlab:
     #     key: nodetype
     #     values:
     #     - gitlab
-  webservice:
-    replicas: 1  
+  migrations:
     tolerations:
     - key: role
       operator: Equal
       value: gitlab
       effect: NoExecute
-
+  webservice:
+    replicaCount: 1  
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+  sidekiq:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+  gitaly:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+  gitlab-shell:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+  # gitlab-pages:
+  kas:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+  # praefect:
