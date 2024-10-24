@@ -125,9 +125,19 @@ gitlab:
     nodeAffinity: "hard"
     affinity:
       nodeAffinity:
-        key: nodetype
-        values:
-        - gitlab
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: nodetype
+              operator: In
+              values:
+              - gitlab  
+    # nodeAffinity: "hard"
+    # affinity:
+    #   nodeAffinity:
+    #     key: nodetype
+    #     values:
+    #     - gitlab
   webservice:
     tolerations:
     - key: role
