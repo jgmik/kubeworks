@@ -122,6 +122,12 @@ upgradeCheck:
   enabled: false
 gitlab:
   toolbox:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+        
     nodeAffinity: "hard"
     affinity:
       nodeAffinity:
@@ -139,6 +145,7 @@ gitlab:
     #     values:
     #     - gitlab
   webservice:
+    replicas: 1  
     tolerations:
     - key: role
       operator: Equal
