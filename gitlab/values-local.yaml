@@ -183,3 +183,23 @@ gitlab:
       value: gitlab
       effect: NoExecute
   # praefect:
+minio:
+  tolerations:
+  - key: role
+    operator: Equal
+    value: gitlab
+    effect: NoExecute
+
+registry:
+  tolerations:
+  - key: role
+    operator: Equal
+    value: gitlab
+    effect: NoExecute
+
+postgresql:
+  tolerations:
+  - key: role
+    operator: Equal
+    value: gitlab
+    effect: NoExecute
