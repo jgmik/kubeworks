@@ -121,6 +121,13 @@ gitlab-runner:
 upgradeCheck:
   enabled: false
 gitlab:
+  gitlab-exporter:
+    tolerations:
+    - key: role
+      operator: Equal
+      value: gitlab
+      effect: NoExecute
+
   toolbox:
     tolerations:
     - key: role
