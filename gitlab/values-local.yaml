@@ -108,6 +108,13 @@ gitlab-runner:
 upgradeCheck:
   enabled: false
 gitlab:
+  toolbox:
+    nodeAffinity: "hard"
+    affinity:
+      nodeAffinity:
+        key: nodetype
+        values:
+        - gitlab
   webservice:
     tolerations:
     - key: role
